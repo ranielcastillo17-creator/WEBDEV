@@ -1,0 +1,51 @@
+﻿body{
+    font-family: "Bricolage Grotesque", sans-serif;
+    color: #0f172a;
+    background: #f8fbff;
+}
+
+.bg-primary-subtle{
+    background-color:#9ACCFC !important;
+}
+
+.logo-font{
+    font-family: "Tilt Warp", sans-serif;
+    letter-spacing: 0.08em;
+    text-transform: lowercase;
+}
+
+.neon-font{
+    font-family: "Tilt Neon", sans-serif;
+}
+
+.grotesque-font{
+    font-family: "Bricolage Grotesque", sans-serif;
+}
+
+.navbar-brand{
+    color: #0f172a;
+    letter-spacing: 0.08em;
+}
+
+.navbar-nav .nav-link{
+    color: #0f172a;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+}
+
+.navbar-nav .nav-link:hover{
+    color: #1b365f;
+}
+
+.hero-copy{
+    max-width:560px;
+    line-height:1.8;
+    color:#10213d;
+    font-size:1.03rem;
+}
+
+img{
+    max-width:100%;
+}
