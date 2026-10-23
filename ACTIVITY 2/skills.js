@@ -39,17 +39,19 @@
 
     function renderGroup(category) {
         var col = el("div", "col-12 mb-4");
-        var group = el("div", "skill-group");
+        var card = el("div", "card rounded-4 border-2 border-primary-subtle");
+        var body = el("div", "card-body p-4 p-md-5");
 
-        group.appendChild(el("h3", "h4 fw-bold mb-4 grotesque-font", category));
+        body.appendChild(el("h3", "h4 fw-bold mb-4 grotesque-font", category));
 
         var list = el("div", "d-flex flex-wrap gap-4");
         skills
             .filter(function (s) { return s.category === category; })
             .forEach(function (s) { list.appendChild(renderSkill(s)); });
 
-        group.appendChild(list);
-        col.appendChild(group);
+        body.appendChild(list);
+        card.appendChild(body);
+        col.appendChild(card);
         return col;
     }
 
