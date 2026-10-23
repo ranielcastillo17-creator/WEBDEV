@@ -1,253 +1,147 @@
-body {
-    font-family: "Bricolage Grotesque", sans-serif;
+/* Game list page. Loaded after ../style.css (shared colors, fonts, navbar). */
+
+.games-hero { padding-bottom: 3rem; }
+
+/* ---------- Filters & search ---------- */
+.filter-bar .btn-filter {
+    border: 2px solid #0f172a;
     color: #0f172a;
-    background: #f8fbff;
-}
-
-img {
-    max-width: 100%;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-section[id] {
-    scroll-margin-top: 1rem;
-}
-
-/* ---------- Colors ---------- */
-.bg-primary-subtle {
-    background-color: #9ACCFC !important;
-}
-
-/* ---------- Typography ---------- */
-.logo-font {
-    font-family: "Tilt Warp", sans-serif;
-    letter-spacing: 0.08em;
-    text-transform: lowercase;
-}
-
-.neon-font {
-    font-family: "Tilt Neon", sans-serif;
-}
-
-.grotesque-font {
-    font-family: "Bricolage Grotesque", sans-serif;
-}
-
-/* ---------- Hero Section ---------- */
-.hero-copy {
-    max-width: 560px;
-    line-height: 1.8;
-    color: #10213d;
-    font-size: 1.03rem;
-}
-
-.games-hero {
-    padding-bottom: 4rem;
-}
-
-.stat-box {
-    flex: 1;
-    padding: 1rem;
-    border-radius: 1.25rem;
-    background: #f8fbff;
-    text-align: center;
-}
-
-.stat-box__num {
-    display: block;
-    font-size: 2rem;
-    font-weight: 700;
-    line-height: 1.1;
-}
-
-.stat-box__label {
-    font-size: 0.85rem;
-    color: #1b365f;
-}
-
-/* ---------- Games: Controls ---------- */
-.game-search .input-group-text,
-.game-search .form-control {
-    background: #9ACCFC;
-    color: #0f172a;
-}
-
-.game-search .form-control::placeholder {
-    color: #1b365f;
-}
-
-.game-search .form-control:focus {
-    box-shadow: none;
-}
-
-.game-search:focus-within {
-    outline: 3px solid #0f172a;
-    outline-offset: 2px;
+    background: transparent;
     border-radius: 50rem;
+    font-family: "Tilt Neon", sans-serif;
+    padding: .35rem 1.1rem;
+    transition: background .2s, color .2s;
+}
+.filter-bar .btn-filter:hover,
+.filter-bar .btn-filter.active {
+    background: #0f172a;
+    color: #9ACCFC;
 }
 
-.filter-btn {
-    padding: 0.5rem 1.4rem;
+.search-input {
+    max-width: 320px;
     border: 2px solid #0f172a;
     border-radius: 50rem;
-    background: transparent;
-    color: #0f172a;
-    font-weight: 600;
-    transition: background-color 0.2s ease, color 0.2s ease;
+    background: #f8fbff;
+    font-family: "Tilt Neon", sans-serif;
+}
+.search-input:focus {
+    border-color: #1b365f;
+    box-shadow: 0 0 0 .25rem rgba(27, 54, 95, .2);
 }
 
-.filter-btn:hover {
-    background: #9ACCFC;
+/* ---------- Grid & cards ---------- */
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1.5rem;
 }
 
-.filter-btn.is-active {
-    background: #0f172a;
-    color: #f8fbff;
-}
-
-.filter-btn:focus-visible {
-    outline: 3px solid #1b365f;
-    outline-offset: 3px;
-}
-
-/* ---------- Games: Poster Cards ---------- */
-.game-tile {
-    all: unset;
-    box-sizing: border-box;
-    display: block;
+.game-card {
     position: relative;
-    width: 100%;
-    aspect-ratio: 3 / 4;
+    aspect-ratio: 1 / 1;
     overflow: hidden;
     border-radius: 1.25rem;
     background: #9ACCFC;
-    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(15, 23, 42, .12);
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+.game-card:hover,
+.game-card:focus-within {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 32px rgba(15, 23, 42, .25);
 }
 
-.game-tile:focus-visible {
-    outline: 3px solid #0f172a;
-    outline-offset: 3px;
-}
-
-.game-tile img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.4s ease;
-}
-
-.game-tile:hover img {
-    transform: scale(1.05);
-}
-
-.game-tile__empty {
+.game-cover {
     position: absolute;
     inset: 0;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: #1b365f;
-    font-size: 3.5rem;
+    text-align: center;
+    padding: 1.5rem;
+    background: linear-gradient(145deg, var(--c1), var(--c2));
+    transition: transform .4s ease;
 }
-
-.game-tile__info {
+.game-cover img {
     position: absolute;
-    inset: auto 0 0 0;
-    padding: 3rem 1rem 1rem;
-    background: linear-gradient(to top, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0));
-    color: #f8fbff;
-}
-
-.game-tile__title {
-    display: block;
-    font-size: 1.15rem;
-    font-weight: 700;
-    line-height: 1.2;
-}
-
-.game-tile__sub {
-    display: block;
-    font-size: 0.9rem;
-    opacity: 0.85;
-}
-
-.game-tile .game-status {
-    position: absolute;
-    top: 0.75rem;
-    left: 0.75rem;
-}
-
-.game-status {
-    display: inline-block;
-    padding: 0.3rem 0.9rem;
-    border-radius: 50rem;
-    background: #0f172a;
-    color: #f8fbff;
-    font-size: 0.85rem;
-}
-
-.game-status--playing {
-    background: #1b365f;
-}
-
-.game-status--backlog {
-    background: #f8fbff;
-    color: #0f172a;
-}
-
-.game-message {
-    width: 100%;
-    max-width: 560px;
-    line-height: 1.8;
-    color: #10213d;
-}
-
-/* ---------- Games: Details Modal ---------- */
-.game-modal {
-    overflow: hidden;
-    border: 0;
-    border-radius: 1.25rem;
-    background: #f8fbff;
-}
-
-.game-modal__cover {
-    --bs-aspect-ratio: 100%;
-    height: 100%;
-    min-height: 16rem;
-    background: #9ACCFC;
-}
-
-.game-modal__cover img {
+    inset: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
+.game-card:hover .game-cover { transform: scale(1.05); }
 
-.game-modal dt {
-    font-size: 0.85rem;
-    color: #1b365f;
+.game-title {
+    position: relative;
+    font-family: "Tilt Warp", sans-serif;
+    font-size: 1.9rem;
+    line-height: 1.1;
+    color: #f8fbff;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    text-shadow: 0 2px 8px rgba(15, 23, 42, .45);
+}
+.game-genre {
+    position: relative;
+    margin-top: .6rem;
+    font-family: "Tilt Neon", sans-serif;
+    font-size: .85rem;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: #0f172a;
 }
 
-.game-modal dd {
-    margin-bottom: 0.75rem;
+/* ---------- Hover overlay ---------- */
+.game-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    background: rgba(15, 23, 42, .88);
+    opacity: 0;
+    transition: opacity .3s ease;
+}
+.game-card:hover .game-overlay,
+.game-card:focus-within .game-overlay { opacity: 1; }
+
+.overlay-title {
+    font-family: "Tilt Warp", sans-serif;
+    font-size: 1.4rem;
+    color: #9ACCFC;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    text-align: center;
+    margin-bottom: .4rem;
+}
+.overlay-meta {
+    font-family: "Tilt Neon", sans-serif;
+    font-size: .85rem;
+    color: #f8fbff;
+    opacity: .7;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+.overlay-links { list-style: none; padding: 0; margin: 0; width: 60%; text-align: center; }
+.overlay-links li + li { border-top: 1px solid rgba(154, 204, 252, .35); }
+.overlay-links a {
+    display: block;
+    padding: .6rem 0;
+    font-family: "Bricolage Grotesque", sans-serif;
     font-size: 1.1rem;
+    color: #f8fbff;
+    text-decoration: none;
+    transition: color .2s;
 }
+.overlay-links a:hover,
+.overlay-links a:focus-visible { color: #9ACCFC; outline: none; }
 
-.game-developer {
-    color: #1b365f;
-}
+.empty-state { display: none; }
 
-/* ---------- Accessibility ---------- */
 @media (prefers-reduced-motion: reduce) {
-    html {
-        scroll-behavior: auto;
-    }
-
-    .game-tile img,
-    .filter-btn {
-        transition: none;
-    }
+    .game-card, .game-cover, .game-overlay { transition: none; }
 }

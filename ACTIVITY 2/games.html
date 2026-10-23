@@ -5,111 +5,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400&family=Tilt+Neon:wght@400&family=Tilt+Warp:wght@400&display=swap" rel="stylesheet">
 
+    <!-- Shared portfolio styles, then page styles.
+         If games.html sits in the same folder as style.css, change to href="style.css" -->
+    <link rel="stylesheet" href="../style.css?v=2">
     <link rel="stylesheet" href="games.css">
 
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
-    <title>Game Library | Raniel Angelo</title>
+    <title>Games | Raniel</title>
 </head>
 <body>
 
-    <section id="home" class="bg-primary-subtle games-hero">
+    <section class="bg-primary-subtle games-hero">
 
-        <div class="container">
-
-            <!-- Update this href when linking to the portfolio -->
-            <a href="index.html" class="btn btn-outline-dark rounded-pill px-4 mt-4 neon-font">
-                <i class="fa-solid fa-chevron-left me-2"></i>Back
-            </a>
-
-            <div class="row align-items-end mt-5 g-4">
-
-                <div class="col-lg-7">
-                    <h1 class="display-3 fw-bold grotesque-font mb-3">
-                        <span class="text-light">Game</span> Library
-                    </h1>
-                    <p class="lead neon-font hero-copy mb-0" id="pageSubtitle"></p>
+        <nav class="navbar navbar-expand-lg py-4">
+            <div class="container">
+                <a class="navbar-brand fw-bold fs-1 logo-font" href="https://ranielcastillo17-creator.github.io">
+                    raniel<span class="text-light">.</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav" aria-controls="navbarNav"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto gap-lg-5">
+                        <li class="nav-item"><a class="nav-link fw-semibold neon-font" href="https://ranielcastillo17-creator.github.io">Home</a></li>
+                        <li class="nav-item"><a class="nav-link fw-semibold neon-font" href="https://ranielcastillo17-creator.github.io/#about">About</a></li>
+                        <li class="nav-item"><a class="nav-link fw-semibold neon-font" href="https://ranielcastillo17-creator.github.io/WEBDEV/skills/skills.html">Skills</a></li>
+                        <li class="nav-item"><a class="nav-link fw-semibold neon-font" href="https://ranielcastillo17-creator.github.io/WEBDEV/projects/projects.html">Projects</a></li>
+                        <li class="nav-item"><a class="nav-link fw-semibold neon-font" href="https://ranielcastillo17-creator.github.io/#contact">Contact</a></li>
+                    </ul>
                 </div>
-
-                <div class="col-lg-5">
-                    <div class="d-flex gap-3" id="gameStats" aria-label="Library stats"></div>
-                </div>
-
             </div>
+        </nav>
 
+        <div class="container text-center">
+            <h1 class="display-3 fw-bold grotesque-font mb-3">
+                <span class="text-light">My</span> Game List
+            </h1>
+            <p class="lead neon-font mx-auto hero-copy mb-0">
+                A collection of games I love playing. Hover (or tap) a card for quick links.
+            </p>
         </div>
-
     </section>
 
-    <section id="games" class="py-5">
-
+    <section class="py-5">
         <div class="container">
 
-            <div class="row g-3 align-items-center mb-5">
-
-                <div class="col-lg-5">
-                    <label for="gameSearch" class="visually-hidden">Search games</label>
-                    <div class="input-group game-search">
-                        <span class="input-group-text border-0 rounded-start-pill ps-4">
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                        </span>
-                        <input type="search" id="gameSearch" class="form-control border-0 rounded-end-pill neon-font"
-                            placeholder="Search title, developer, or genre">
-                    </div>
-                </div>
-
-                <div class="col-lg-7">
-                    <div class="d-flex flex-wrap gap-2 justify-content-lg-end" id="filterBar"
-                        role="group" aria-label="Filter games by status"></div>
-                </div>
-
+            <div class="d-flex flex-column flex-md-row gap-3 justify-content-between align-items-md-center mb-5">
+                <div class="filter-bar d-flex flex-wrap gap-2" id="filters" role="group" aria-label="Filter by genre"></div>
+                <input type="search" id="search" class="form-control search-input" placeholder="Search games..." aria-label="Search games">
             </div>
 
-            <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-3" id="gameGrid" aria-live="polite">
-                <p class="game-message neon-font">Loading games…</p>
-            </div>
+            <div class="game-grid" id="gameGrid"></div>
+
+            <p class="empty-state text-center neon-font fs-5 mt-4" id="emptyState">No games found.</p>
 
         </div>
-
     </section>
-
-    <!-- Details modal -->
-    <div class="modal fade" id="gameModal" tabindex="-1" aria-labelledby="gameModalTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content game-modal">
-                <button type="button" class="btn-close position-absolute top-0 end-0 m-3" style="z-index: 2;"
-                    data-bs-dismiss="modal" aria-label="Close"></button>
-                <div class="row g-0">
-                    <div class="col-md-5">
-                        <div class="ratio game-modal__cover" id="gameModalCover"></div>
-                    </div>
-                    <div class="col-md-7 p-4 p-md-5 d-flex flex-column justify-content-center">
-                        <span class="game-status neon-font align-self-start mb-3" id="gameModalStatus"></span>
-                        <h2 class="fw-bold grotesque-font mb-1" id="gameModalTitle"></h2>
-                        <p class="game-developer neon-font fs-5 mb-4" id="gameModalDeveloper"></p>
-                        <dl class="neon-font mb-3">
-                            <dt>Genre</dt>
-                            <dd id="gameModalGenre"></dd>
-                            <dt>Released</dt>
-                            <dd id="gameModalReleased"></dd>
-                        </dl>
-                        <div class="d-flex flex-wrap gap-2" id="gameModalPlatforms"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <footer class="bg-primary-subtle py-3">
         <div class="container text-center">
-            © 2026 Raniel Angelo Castillo.
-            All Rights Reserved.
+            © 2026 Raniel Angelo Castillo. All Rights Reserved.
         </div>
     </footer>
 

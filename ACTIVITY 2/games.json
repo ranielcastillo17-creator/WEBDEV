@@ -1,69 +1,106 @@
-{
-  "title": "Game Library",
-  "subtitle": "Raniel's personal game list",
-  "games": [
+[
     {
-      "title": "Elden Ring",
-      "developer": "FromSoftware",
-      "genre": "Action RPG",
-      "platforms": ["PC", "PS5", "Xbox"],
-      "released": "February 25, 2022",
-      "status": "Completed",
-      "image": "images/games/elden-ring.jpg"
+        "id": 1,
+        "title": "Hollow Knight",
+        "genre": "Metroidvania",
+        "platform": "PC, Switch, PS4, Xbox",
+        "year": 2017,
+        "image": "",
+        "colors": ["#1b365f", "#0f172a"],
+        "links": [
+            { "label": "Official Site", "url": "https://www.hollowknight.com" },
+            { "label": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Hollow_Knight" }
+        ]
     },
     {
-      "title": "Hades",
-      "developer": "Supergiant Games",
-      "genre": "Roguelike",
-      "platforms": ["PC", "Switch"],
-      "released": "September 17, 2020",
-      "status": "Completed",
-      "image": "images/games/hades.jpg"
+        "id": 2,
+        "title": "Celeste",
+        "genre": "Platformer",
+        "platform": "PC, Switch, PS4, Xbox",
+        "year": 2018,
+        "image": "",
+        "colors": ["#9ACCFC", "#1b365f"],
+        "links": [
+            { "label": "Official Site", "url": "https://www.celestegame.com" },
+            { "label": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Celeste_(video_game)" }
+        ]
     },
     {
-      "title": "Minecraft",
-      "developer": "Mojang Studios",
-      "genre": "Sandbox",
-      "platforms": ["PC", "Mobile", "Console"],
-      "released": "November 18, 2011",
-      "status": "Playing",
-      "image": "images/games/minecraft.jpg"
+        "id": 3,
+        "title": "Hades",
+        "genre": "Roguelike",
+        "platform": "PC, Switch, PS5, Xbox",
+        "year": 2020,
+        "image": "",
+        "colors": ["#0f172a", "#1b365f"],
+        "links": [
+            { "label": "Official Site", "url": "https://www.supergiantgames.com/games/hades" },
+            { "label": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Hades_(video_game)" }
+        ]
     },
     {
-      "title": "Valorant",
-      "developer": "Riot Games",
-      "genre": "Tactical Shooter",
-      "platforms": ["PC"],
-      "released": "June 2, 2020",
-      "status": "Playing",
-      "image": "images/games/valorant.jpg"
+        "id": 4,
+        "title": "Stardew Valley",
+        "genre": "Simulation",
+        "platform": "PC, Switch, Mobile",
+        "year": 2016,
+        "image": "",
+        "colors": ["#9ACCFC", "#6fa8dc"],
+        "links": [
+            { "label": "Official Site", "url": "https://www.stardewvalley.net" },
+            { "label": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Stardew_Valley" }
+        ]
     },
     {
-      "title": "Stardew Valley",
-      "developer": "ConcernedApe",
-      "genre": "Farming Sim",
-      "platforms": ["PC", "Switch", "Mobile"],
-      "released": "February 26, 2016",
-      "status": "Completed",
-      "image": "images/games/stardew-valley.jpg"
+        "id": 5,
+        "title": "Minecraft",
+        "genre": "Sandbox",
+        "platform": "PC, Console, Mobile",
+        "year": 2011,
+        "image": "",
+        "colors": ["#1b365f", "#9ACCFC"],
+        "links": [
+            { "label": "Official Site", "url": "https://www.minecraft.net" },
+            { "label": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Minecraft" }
+        ]
     },
     {
-      "title": "The Witcher 3",
-      "developer": "CD Projekt Red",
-      "genre": "Open-World RPG",
-      "platforms": ["PC", "PS4", "Xbox One"],
-      "released": "May 19, 2015",
-      "status": "Backlog",
-      "image": "images/games/witcher-3.jpg"
+        "id": 6,
+        "title": "Elden Ring",
+        "genre": "Action RPG",
+        "platform": "PC, PS4, PS5, Xbox",
+        "year": 2022,
+        "image": "",
+        "colors": ["#0f172a", "#6fa8dc"],
+        "links": [
+            { "label": "Official Site", "url": "https://en.bandainamcoent.eu/elden-ring/elden-ring" },
+            { "label": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Elden_Ring" }
+        ]
     },
     {
-      "title": "Celeste",
-      "developer": "Maddy Makes Games",
-      "genre": "Platformer",
-      "platforms": ["PC", "Switch"],
-      "released": "January 25, 2018",
-      "status": "Backlog",
-      "image": "images/games/celeste.jpg"
+        "id": 7,
+        "title": "Hollow Knight: Silksong",
+        "genre": "Metroidvania",
+        "platform": "PC, Switch",
+        "year": 2025,
+        "image": "",
+        "colors": ["#6fa8dc", "#0f172a"],
+        "links": [
+            { "label": "Official Site", "url": "https://www.hollowknightsilksong.com" },
+            { "label": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Hollow_Knight:_Silksong" }
+        ]
+    },
+    {
+        "id": 8,
+        "title": "Portal 2",
+        "genre": "Puzzle",
+        "platform": "PC, PS3, Xbox 360",
+        "year": 2011,
+        "image": "",
+        "colors": ["#1b365f", "#0f172a"],
+        "links": [
+            { "label": "Official Site", "url": "https://www.thinkwithportals.com" },
+            { "label": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Portal_2" }
+        ]
     }
-  ]
-}
+]
