@@ -59,12 +59,7 @@ html {
 .skills-hero {
     padding-bottom: 4rem;
 }
-.skill-group {
-    padding: 2rem;
-    border: 2px solid #9ACCFC;
-    border-radius: 1.25rem;
-    background: #ffffff;
-}   
+
 .skill-item {
     display: flex;
     flex-direction: column;
@@ -134,12 +129,7 @@ html {
     html {
         scroll-behavior: auto;
     }
-    .filter-btn {
+       .filter-btn {
         transition: none;
-    }
-}
-@media (max-width: 575.98px) {
-    .skill-group {
-        padding: 1.25rem;
     }
 }
