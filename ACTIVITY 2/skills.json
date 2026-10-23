@@ -1,0 +1,29 @@
+{
+  "categories": [
+    {
+      "title": "Frontend",
+      "skills": [
+        { "name": "HTML", "image": "images/html.png" },
+        { "name": "CSS", "image": "images/css.png" },
+        { "name": "Bootstrap", "image": "images/bootstrap.png" },
+        { "name": "JavaScript", "image": "images/js.png" }
+      ]
+    },
+    {
+      "title": "Backend",
+      "skills": [
+        { "name": "PHP", "image": "images/php.png" },
+        { "name": "MySQL", "image": "images/mysql.png" }
+      ]
+    },
+    {
+      "title": "Tools",
+      "skills": [
+        { "name": "VS Code", "image": "images/vscode.png" },
+        { "name": "GitHub", "image": "images/github.png" },
+        { "name": "XAMPP", "image": "images/xampp.png" },
+        { "name": "MySQL Workbench", "image": "images/mysqlwb.png" }
+      ]
+    }
+  ]
+}
