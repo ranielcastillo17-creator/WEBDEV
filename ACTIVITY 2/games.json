@@ -6,101 +6,721 @@
         "platform": "PC, Switch, PS4, Xbox",
         "year": 2017,
         "image": "",
-        "colors": ["#1b365f", "#0f172a"],
+        "colors": [
+            "#9ACCFC",
+            "#1b365f"
+        ],
         "links": [
-            { "label": "Official Site", "url": "https://www.hollowknight.com" },
-            { "label": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Hollow_Knight" }
+            {
+                "label": "Official Site",
+                "url": "https://www.hollowknight.com"
+            },
+            {
+                "label": "Wikipedia",
+                "url": "https://en.wikipedia.org/wiki/Hollow_Knight"
+            }
         ]
     },
     {
         "id": 2,
-        "title": "Celeste",
-        "genre": "Platformer",
-        "platform": "PC, Switch, PS4, Xbox",
-        "year": 2018,
-        "image": "",
-        "colors": ["#9ACCFC", "#1b365f"],
-        "links": [
-            { "label": "Official Site", "url": "https://www.celestegame.com" },
-            { "label": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Celeste_(video_game)" }
-        ]
-    },
-    {
-        "id": 3,
-        "title": "Hades",
-        "genre": "Roguelike",
-        "platform": "PC, Switch, PS5, Xbox",
-        "year": 2020,
-        "image": "",
-        "colors": ["#0f172a", "#1b365f"],
-        "links": [
-            { "label": "Official Site", "url": "https://www.supergiantgames.com/games/hades" },
-            { "label": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Hades_(video_game)" }
-        ]
-    },
-    {
-        "id": 4,
-        "title": "Stardew Valley",
-        "genre": "Simulation",
-        "platform": "PC, Switch, Mobile",
-        "year": 2016,
-        "image": "",
-        "colors": ["#9ACCFC", "#6fa8dc"],
-        "links": [
-            { "label": "Official Site", "url": "https://www.stardewvalley.net" },
-            { "label": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Stardew_Valley" }
-        ]
-    },
-    {
-        "id": 5,
-        "title": "Minecraft",
-        "genre": "Sandbox",
-        "platform": "PC, Console, Mobile",
-        "year": 2011,
-        "image": "",
-        "colors": ["#1b365f", "#9ACCFC"],
-        "links": [
-            { "label": "Official Site", "url": "https://www.minecraft.net" },
-            { "label": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Minecraft" }
-        ]
-    },
-    {
-        "id": 6,
-        "title": "Elden Ring",
-        "genre": "Action RPG",
-        "platform": "PC, PS4, PS5, Xbox",
-        "year": 2022,
-        "image": "",
-        "colors": ["#0f172a", "#6fa8dc"],
-        "links": [
-            { "label": "Official Site", "url": "https://en.bandainamcoent.eu/elden-ring/elden-ring" },
-            { "label": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Elden_Ring" }
-        ]
-    },
-    {
-        "id": 7,
         "title": "Hollow Knight: Silksong",
         "genre": "Metroidvania",
         "platform": "PC, Switch",
         "year": 2025,
         "image": "",
-        "colors": ["#6fa8dc", "#0f172a"],
+        "colors": [
+            "#0f172a",
+            "#1b365f"
+        ],
         "links": [
-            { "label": "Official Site", "url": "https://www.hollowknightsilksong.com" },
-            { "label": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Hollow_Knight:_Silksong" }
+            {
+                "label": "Official Site",
+                "url": "https://www.hollowknightsilksong.com"
+            },
+            {
+                "label": "Wikipedia",
+                "url": "https://en.wikipedia.org/wiki/Hollow_Knight:_Silksong"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "title": "Celeste",
+        "genre": "Platformer",
+        "platform": "PC, Switch, PS4, Xbox",
+        "year": 2018,
+        "image": "",
+        "colors": [
+            "#9ACCFC",
+            "#6fa8dc"
+        ],
+        "links": [
+            {
+                "label": "Official Site",
+                "url": "https://www.celestegame.com"
+            },
+            {
+                "label": "Wikipedia",
+                "url": "https://en.wikipedia.org/wiki/Celeste_(video_game)"
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "title": "Hades",
+        "genre": "Roguelike",
+        "platform": "PC, Switch, PS5, Xbox",
+        "year": 2020,
+        "image": "",
+        "colors": [
+            "#1b365f",
+            "#9ACCFC"
+        ],
+        "links": [
+            {
+                "label": "Official Site",
+                "url": "https://www.supergiantgames.com/games/hades"
+            },
+            {
+                "label": "Wikipedia",
+                "url": "https://en.wikipedia.org/wiki/Hades_(video_game)"
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "title": "Stardew Valley",
+        "genre": "Simulation",
+        "platform": "PC, Switch, Mobile",
+        "year": 2016,
+        "image": "",
+        "colors": [
+            "#0f172a",
+            "#6fa8dc"
+        ],
+        "links": [
+            {
+                "label": "Official Site",
+                "url": "https://www.stardewvalley.net"
+            },
+            {
+                "label": "Wikipedia",
+                "url": "https://en.wikipedia.org/wiki/Stardew_Valley"
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "title": "Minecraft",
+        "genre": "Sandbox",
+        "platform": "PC, Console, Mobile",
+        "year": 2011,
+        "image": "",
+        "colors": [
+            "#6fa8dc",
+            "#0f172a"
+        ],
+        "links": [
+            {
+                "label": "Official Site",
+                "url": "https://www.minecraft.net"
+            },
+            {
+                "label": "Wikipedia",
+                "url": "https://en.wikipedia.org/wiki/Minecraft"
+            }
+        ]
+    },
+    {
+        "id": 7,
+        "title": "Terraria",
+        "genre": "Sandbox",
+        "platform": "PC, Console, Mobile",
+        "year": 2011,
+        "image": "",
+        "colors": [
+            "#6fa8dc",
+            "#1b365f"
+        ],
+        "links": [
+            {
+                "label": "Official Site",
+                "url": "https://terraria.org"
+            },
+            {
+                "label": "Wikipedia",
+                "url": "https://en.wikipedia.org/wiki/Terraria"
+            }
         ]
     },
     {
         "id": 8,
+        "title": "Roblox",
+        "genre": "Sandbox",
+        "platform": "PC, Mobile, Console",
+        "year": 2006,
+        "image": "",
+        "colors": [
+            "#1b365f",
+            "#0f172a"
+        ],
+        "links": [
+            {
+                "label": "Official Site",
+                "url": "https://www.roblox.com"
+            },
+            {
+                "label": "Wikipedia",
+                "url": "https://en.wikipedia.org/wiki/Roblox"
+            }
+        ]
+    },
+    {
+        "id": 9,
+        "title": "Elden Ring",
+        "genre": "Action RPG",
+        "platform": "PC, PS4, PS5, Xbox",
+        "year": 2022,
+        "image": "",
+        "colors": [
+            "#9ACCFC",
+            "#1b365f"
+        ],
+        "links": [
+            {
+                "label": "Official Site",
+                "url": "https://en.bandainamcoent.eu/elden-ring/elden-ring"
+            },
+            {
+                "label": "Wikipedia",
+                "url": "https://en.wikipedia.org/wiki/Elden_Ring"
+            }
+        ]
+    },
+    {
+        "id": 10,
+        "title": "Dark Souls",
+        "genre": "Action RPG",
+        "platform": "PC, PS3, Xbox 360, Switch",
+        "year": 2011,
+        "image": "",
+        "colors": [
+            "#0f172a",
+            "#1b365f"
+        ],
+        "links": [
+            {
+                "label": "Wikipedia",
+                "url": "https://en.wikipedia.org/wiki/Dark_Souls"
+            }
+        ]
+    },
+    {
+        "id": 11,
+        "title": "The Witcher 3: Wild Hunt",
+        "genre": "Action RPG",
+        "platform": "PC, PS4, Xbox One, Switch",
+        "year": 2015,
+        "image": "",
+        "colors": [
+            "#9ACCFC",
+            "#6fa8dc"
+        ],
+        "links": [
+            {
+                "label": "Official Site",
+                "url": "https://www.thewitcher.com/en/witcher3"
+            },
+            {
+                "label": "Wikipedia",
+                "url": "https://en.wikipedia.org/wiki/The_Witcher_3:_Wild_Hunt"
+            }
+        ]
+    },
+    {
+        "id": 12,
+        "title": "Genshin Impact",
+        "genre": "Action RPG",
+        "platform": "PC, Mobile, PS4, PS5",
+        "year": 2020,
+        "image": "",
+        "colors": [
+            "#1b365f",
+            "#9ACCFC"
+        ],
+        "links": [
+            {
+                "label": "Official Site",
+                "url": "https://genshin.hoyoverse.com"
+            },
+            {
+                "label": "Wikipedia",
+                "url": "https://en.wikipedia.org/wiki/Genshin_Impact"
+            }
+        ]
+    },
+    {
+        "id": 13,
+        "title": "Persona 5",
+        "genre": "JRPG",
+        "platform": "PS3, PS4, Switch, PC",
+        "year": 2016,
+        "image": "",
+        "colors": [
+            "#0f172a",
+            "#6fa8dc"
+        ],
+        "links": [
+            {
+                "label": "Wikipedia",
+                "url": "https://en.wikipedia.org/wiki/Persona_5"
+            }
+        ]
+    },
+    {
+        "id": 14,
+        "title": "Undertale",
+        "genre": "RPG",
+        "platform": "PC, Switch, PS4",
+        "year": 2015,
+        "image": "",
+        "colors": [
+            "#6fa8dc",
+            "#0f172a"
+        ],
+        "links": [
+            {
+                "label": "Official Site",
+                "url": "https://undertale.com"
+            },
+            {
+                "label": "Wikipedia",
+                "url": "https://en.wikipedia.org/wiki/Undertale"
+            }
+        ]
+    },
+    {
+        "id": 15,
+        "title": "Cuphead",
+        "genre": "Platformer",
+        "platform": "PC, Switch, Xbox, PS4",
+        "year": 2017,
+        "image": "",
+        "colors": [
+            "#6fa8dc",
+            "#1b365f"
+        ],
+        "links": [
+            {
+                "label": "Official Site",
+                "url": "https://cupheadgame.com"
+            },
+            {
+                "label": "Wikipedia",
+                "url": "https://en.wikipedia.org/wiki/Cuphead"
+            }
+        ]
+    },
+    {
+        "id": 16,
+        "title": "Super Mario Odyssey",
+        "genre": "Platformer",
+        "platform": "Switch",
+        "year": 2017,
+        "image": "",
+        "colors": [
+            "#1b365f",
+            "#0f172a"
+        ],
+        "links": [
+            {
+                "label": "Wikipedia",
+                "url": "https://en.wikipedia.org/wiki/Super_Mario_Odyssey"
+            }
+        ]
+    },
+    {
+        "id": 17,
+        "title": "Mario Kart 8 Deluxe",
+        "genre": "Racing",
+        "platform": "Switch",
+        "year": 2017,
+        "image": "",
+        "colors": [
+            "#9ACCFC",
+            "#1b365f"
+        ],
+        "links": [
+            {
+                "label": "Wikipedia",
+                "url": "https://en.wikipedia.org/wiki/Mario_Kart_8_Deluxe"
+            }
+        ]
+    },
+    {
+        "id": 18,
+        "title": "The Legend of Zelda: Breath of the Wild",
+        "genre": "Adventure",
+        "platform": "Switch, Wii U",
+        "year": 2017,
+        "image": "",
+        "colors": [
+            "#0f172a",
+            "#1b365f"
+        ],
+        "links": [
+            {
+                "label": "Official Site",
+                "url": "https://www.zelda.com/breath-of-the-wild"
+            },
+            {
+                "label": "Wikipedia",
+                "url": "https://en.wikipedia.org/wiki/The_Legend_of_Zelda:_Breath_of_the_Wild"
+            }
+        ]
+    },
+    {
+        "id": 19,
+        "title": "Animal Crossing: New Horizons",
+        "genre": "Simulation",
+        "platform": "Switch",
+        "year": 2020,
+        "image": "",
+        "colors": [
+            "#9ACCFC",
+            "#6fa8dc"
+        ],
+        "links": [
+            {
+                "label": "Official Site",
+                "url": "https://animalcrossing.nintendo.com"
+            },
+            {
+                "label": "Wikipedia",
+                "url": "https://en.wikipedia.org/wiki/Animal_Crossing:_New_Horizons"
+            }
+        ]
+    },
+    {
+        "id": 20,
         "title": "Portal 2",
         "genre": "Puzzle",
         "platform": "PC, PS3, Xbox 360",
         "year": 2011,
         "image": "",
-        "colors": ["#1b365f", "#0f172a"],
+        "colors": [
+            "#1b365f",
+            "#9ACCFC"
+        ],
         "links": [
-            { "label": "Official Site", "url": "https://www.thinkwithportals.com" },
-            { "label": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Portal_2" }
+            {
+                "label": "Official Site",
+                "url": "https://www.thinkwithportals.com"
+            },
+            {
+                "label": "Wikipedia",
+                "url": "https://en.wikipedia.org/wiki/Portal_2"
+            }
+        ]
+    },
+    {
+        "id": 21,
+        "title": "Stray",
+        "genre": "Adventure",
+        "platform": "PC, PS4, PS5, Xbox",
+        "year": 2022,
+        "image": "",
+        "colors": [
+            "#0f172a",
+            "#6fa8dc"
+        ],
+        "links": [
+            {
+                "label": "Wikipedia",
+                "url": "https://en.wikipedia.org/wiki/Stray_(video_game)"
+            }
+        ]
+    },
+    {
+        "id": 22,
+        "title": "God of War",
+        "genre": "Action-Adventure",
+        "platform": "PS4, PC",
+        "year": 2018,
+        "image": "",
+        "colors": [
+            "#6fa8dc",
+            "#0f172a"
+        ],
+        "links": [
+            {
+                "label": "Wikipedia",
+                "url": "https://en.wikipedia.org/wiki/God_of_War_(2018_video_game)"
+            }
+        ]
+    },
+    {
+        "id": 23,
+        "title": "Red Dead Redemption 2",
+        "genre": "Action-Adventure",
+        "platform": "PC, PS4, Xbox One",
+        "year": 2018,
+        "image": "",
+        "colors": [
+            "#6fa8dc",
+            "#1b365f"
+        ],
+        "links": [
+            {
+                "label": "Official Site",
+                "url": "https://www.rockstargames.com/reddeadredemption2"
+            },
+            {
+                "label": "Wikipedia",
+                "url": "https://en.wikipedia.org/wiki/Red_Dead_Redemption_2"
+            }
+        ]
+    },
+    {
+        "id": 24,
+        "title": "Grand Theft Auto V",
+        "genre": "Action-Adventure",
+        "platform": "PC, PS4, PS5, Xbox",
+        "year": 2013,
+        "image": "",
+        "colors": [
+            "#1b365f",
+            "#0f172a"
+        ],
+        "links": [
+            {
+                "label": "Official Site",
+                "url": "https://www.rockstargames.com/gta-v"
+            },
+            {
+                "label": "Wikipedia",
+                "url": "https://en.wikipedia.org/wiki/Grand_Theft_Auto_V"
+            }
+        ]
+    },
+    {
+        "id": 25,
+        "title": "Valorant",
+        "genre": "FPS",
+        "platform": "PC, PS5, Xbox",
+        "year": 2020,
+        "image": "",
+        "colors": [
+            "#9ACCFC",
+            "#1b365f"
+        ],
+        "links": [
+            {
+                "label": "Official Site",
+                "url": "https://playvalorant.com"
+            },
+            {
+                "label": "Wikipedia",
+                "url": "https://en.wikipedia.org/wiki/Valorant"
+            }
+        ]
+    },
+    {
+        "id": 26,
+        "title": "Counter-Strike 2",
+        "genre": "FPS",
+        "platform": "PC",
+        "year": 2023,
+        "image": "",
+        "colors": [
+            "#0f172a",
+            "#1b365f"
+        ],
+        "links": [
+            {
+                "label": "Official Site",
+                "url": "https://www.counter-strike.net"
+            },
+            {
+                "label": "Wikipedia",
+                "url": "https://en.wikipedia.org/wiki/Counter-Strike_2"
+            }
+        ]
+    },
+    {
+        "id": 27,
+        "title": "Apex Legends",
+        "genre": "Battle Royale",
+        "platform": "PC, PS4, PS5, Xbox, Switch",
+        "year": 2019,
+        "image": "",
+        "colors": [
+            "#9ACCFC",
+            "#6fa8dc"
+        ],
+        "links": [
+            {
+                "label": "Official Site",
+                "url": "https://www.ea.com/games/apex-legends"
+            },
+            {
+                "label": "Wikipedia",
+                "url": "https://en.wikipedia.org/wiki/Apex_Legends"
+            }
+        ]
+    },
+    {
+        "id": 28,
+        "title": "Fortnite",
+        "genre": "Battle Royale",
+        "platform": "PC, Console, Mobile",
+        "year": 2017,
+        "image": "",
+        "colors": [
+            "#1b365f",
+            "#9ACCFC"
+        ],
+        "links": [
+            {
+                "label": "Official Site",
+                "url": "https://www.fortnite.com"
+            },
+            {
+                "label": "Wikipedia",
+                "url": "https://en.wikipedia.org/wiki/Fortnite"
+            }
+        ]
+    },
+    {
+        "id": 29,
+        "title": "Overwatch 2",
+        "genre": "FPS",
+        "platform": "PC, PS5, Xbox, Switch",
+        "year": 2022,
+        "image": "",
+        "colors": [
+            "#0f172a",
+            "#6fa8dc"
+        ],
+        "links": [
+            {
+                "label": "Official Site",
+                "url": "https://overwatch.blizzard.com"
+            },
+            {
+                "label": "Wikipedia",
+                "url": "https://en.wikipedia.org/wiki/Overwatch_2"
+            }
+        ]
+    },
+    {
+        "id": 30,
+        "title": "League of Legends",
+        "genre": "MOBA",
+        "platform": "PC",
+        "year": 2009,
+        "image": "",
+        "colors": [
+            "#6fa8dc",
+            "#0f172a"
+        ],
+        "links": [
+            {
+                "label": "Official Site",
+                "url": "https://www.leagueoflegends.com"
+            },
+            {
+                "label": "Wikipedia",
+                "url": "https://en.wikipedia.org/wiki/League_of_Legends"
+            }
+        ]
+    },
+    {
+        "id": 31,
+        "title": "Dota 2",
+        "genre": "MOBA",
+        "platform": "PC",
+        "year": 2013,
+        "image": "",
+        "colors": [
+            "#6fa8dc",
+            "#1b365f"
+        ],
+        "links": [
+            {
+                "label": "Official Site",
+                "url": "https://www.dota2.com"
+            },
+            {
+                "label": "Wikipedia",
+                "url": "https://en.wikipedia.org/wiki/Dota_2"
+            }
+        ]
+    },
+    {
+        "id": 32,
+        "title": "Mobile Legends: Bang Bang",
+        "genre": "MOBA",
+        "platform": "Mobile",
+        "year": 2016,
+        "image": "",
+        "colors": [
+            "#1b365f",
+            "#0f172a"
+        ],
+        "links": [
+            {
+                "label": "Official Site",
+                "url": "https://www.mobilelegends.com"
+            },
+            {
+                "label": "Wikipedia",
+                "url": "https://en.wikipedia.org/wiki/Mobile_Legends:_Bang_Bang"
+            }
+        ]
+    },
+    {
+        "id": 33,
+        "title": "Rocket League",
+        "genre": "Sports",
+        "platform": "PC, PS4, PS5, Xbox, Switch",
+        "year": 2015,
+        "image": "",
+        "colors": [
+            "#9ACCFC",
+            "#1b365f"
+        ],
+        "links": [
+            {
+                "label": "Official Site",
+                "url": "https://www.rocketleague.com"
+            },
+            {
+                "label": "Wikipedia",
+                "url": "https://en.wikipedia.org/wiki/Rocket_League"
+            }
+        ]
+    },
+    {
+        "id": 34,
+        "title": "Among Us",
+        "genre": "Party",
+        "platform": "PC, Mobile, Console",
+        "year": 2018,
+        "image": "",
+        "colors": [
+            "#0f172a",
+            "#1b365f"
+        ],
+        "links": [
+            {
+                "label": "Official Site",
+                "url": "https://www.innersloth.com/games/among-us"
+            },
+            {
+                "label": "Wikipedia",
+                "url": "https://en.wikipedia.org/wiki/Among_Us"
+            }
         ]
     }
 ]
