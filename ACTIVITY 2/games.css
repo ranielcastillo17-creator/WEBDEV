@@ -1,4 +1,4 @@
-/* Game list page. Loaded after ../style.css (shared colors, fonts, navbar). */
+/* Game list page. Loaded after ../ACTIVITY 1/style.css (shared colors, fonts, navbar). */
 
 .games-hero { padding-bottom: 3rem; }
 
@@ -41,7 +41,7 @@
     position: relative;
     aspect-ratio: 1 / 1;
     overflow: hidden;
-    border-radius: 1.25rem;
+    border-radius: 0;
     background: #9ACCFC;
     box-shadow: 0 4px 14px rgba(15, 23, 42, .12);
     transition: transform .3s ease, box-shadow .3s ease;
