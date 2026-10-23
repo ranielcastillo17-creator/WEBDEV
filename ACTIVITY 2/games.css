@@ -1,0 +1,216 @@
+body {
+    font-family: "Bricolage Grotesque", sans-serif;
+    color: #0f172a;
+    background: #f8fbff;
+}
+
+img {
+    max-width: 100%;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+section[id] {
+    scroll-margin-top: 1rem;
+}
+
+/* ---------- Colors ---------- */
+.bg-primary-subtle {
+    background-color: #9ACCFC !important;
+}
+
+/* ---------- Typography ---------- */
+.logo-font {
+    font-family: "Tilt Warp", sans-serif;
+    letter-spacing: 0.08em;
+    text-transform: lowercase;
+}
+
+.neon-font {
+    font-family: "Tilt Neon", sans-serif;
+}
+
+.grotesque-font {
+    font-family: "Bricolage Grotesque", sans-serif;
+}
+
+/* ---------- Games: Carousel ---------- */
+.game-stage {
+    position: relative;
+    height: 36rem;
+    overflow: hidden;
+    touch-action: pan-y;
+}
+
+.game-track {
+    position: relative;
+    height: 100%;
+}
+
+.game-card {
+    --offset: 0;
+    --step: 19rem;
+    --scale: 0.85;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 17rem;
+    padding: 1rem;
+    border: 2px solid transparent;
+    border-radius: 1.25rem;
+    background: #f8fbff;
+    text-align: center;
+    opacity: 0.55;
+    cursor: pointer;
+    transform: translate(-50%, -50%) translateX(calc(var(--offset) * var(--step))) scale(var(--scale));
+    transition: transform 0.4s ease, opacity 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.game-card.is-active {
+    --scale: 1;
+    z-index: 2;
+    border-color: #0f172a;
+    box-shadow: 0 1.5rem 3rem rgba(15, 23, 42, 0.25);
+    opacity: 1;
+    cursor: default;
+}
+
+.game-card.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.game-card:focus-visible {
+    outline: 3px solid #0f172a;
+    outline-offset: 4px;
+}
+
+.game-cover {
+    border-radius: 1rem;
+    overflow: hidden;
+    background: #9ACCFC;
+}
+
+.game-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.game-cover__empty {
+    color: #1b365f;
+    font-size: 3rem;
+}
+
+.game-developer {
+    color: #1b365f;
+}
+
+.game-meta {
+    font-size: 0.95rem;
+    color: #10213d;
+}
+
+.game-status {
+    display: inline-block;
+    padding: 0.4rem 1.2rem;
+    border-radius: 50rem;
+    background: #0f172a;
+    color: #f8fbff;
+    font-size: 0.9rem;
+}
+
+.game-status--playing {
+    background: #1b365f;
+}
+
+.game-status--backlog {
+    background: #9ACCFC;
+    color: #0f172a;
+}
+
+/* ---------- Games: Controls ---------- */
+.game-nav {
+    position: absolute;
+    top: 50%;
+    z-index: 3;
+    width: 3rem;
+    height: 3rem;
+    border: 0;
+    border-radius: 50%;
+    background: #0f172a;
+    color: #f8fbff;
+    transform: translateY(-50%);
+    transition: opacity 0.2s ease, background-color 0.2s ease;
+}
+
+.game-nav:hover:not(:disabled) {
+    background: #1b365f;
+}
+
+.game-nav:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.game-nav:focus-visible {
+    outline: 3px solid #f8fbff;
+    outline-offset: 3px;
+}
+
+.game-nav--prev {
+    left: 1rem;
+}
+
+.game-nav--next {
+    right: 1rem;
+}
+
+.game-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    max-width: 90%;
+    margin: 0;
+    text-align: center;
+    transform: translate(-50%, -50%);
+}
+
+/* ---------- Responsive Styles ---------- */
+@media (max-width: 575.98px) {
+    .game-stage {
+        height: 34rem;
+    }
+
+    .game-card {
+        --step: 15.5rem;
+        width: 15rem;
+    }
+
+    .game-nav {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+
+    .game-nav--prev {
+        left: 0.5rem;
+    }
+
+    .game-nav--next {
+        right: 0.5rem;
+    }
+}
+
+/* ---------- Accessibility ---------- */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .game-card,
+    .game-nav {
+        transition: none;
+    }
+}
