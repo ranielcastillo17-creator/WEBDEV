@@ -19,43 +19,99 @@
 </head>
 <body>
 
-    <section id="games" class="bg-primary-subtle min-vh-100 py-4">
+    <section id="home" class="bg-primary-subtle games-hero">
 
         <div class="container">
 
             <!-- Update this href when linking to the portfolio -->
-            <a href="index.html" class="btn btn-outline-dark rounded-pill px-4 neon-font">
+            <a href="index.html" class="btn btn-outline-dark rounded-pill px-4 mt-4 neon-font">
                 <i class="fa-solid fa-chevron-left me-2"></i>Back
             </a>
 
-            <div class="text-center mt-4 mb-5">
-                <h1 class="display-4 fw-bold grotesque-font mb-2" id="pageTitle">
-                    <span class="text-light">Game</span> Library
-                </h1>
-                <p class="lead neon-font mb-0" id="pageSubtitle"></p>
+            <div class="row align-items-end mt-5 g-4">
+
+                <div class="col-lg-7">
+                    <h1 class="display-3 fw-bold grotesque-font mb-3">
+                        <span class="text-light">Game</span> Library
+                    </h1>
+                    <p class="lead neon-font hero-copy mb-0" id="pageSubtitle"></p>
+                </div>
+
+                <div class="col-lg-5">
+                    <div class="d-flex gap-3" id="gameStats" aria-label="Library stats"></div>
+                </div>
+
             </div>
 
         </div>
 
-        <div class="game-stage" id="gameStage" role="region" aria-roledescription="carousel" aria-label="Game list">
+    </section>
 
-            <button type="button" class="game-nav game-nav--prev" id="prevBtn" aria-label="Previous game">
-                <i class="fa-solid fa-chevron-left"></i>
-            </button>
+    <section id="games" class="py-5">
 
-            <div class="game-track" id="gameTrack">
+        <div class="container">
+
+            <div class="row g-3 align-items-center mb-5">
+
+                <div class="col-lg-5">
+                    <label for="gameSearch" class="visually-hidden">Search games</label>
+                    <div class="input-group game-search">
+                        <span class="input-group-text border-0 rounded-start-pill ps-4">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </span>
+                        <input type="search" id="gameSearch" class="form-control border-0 rounded-end-pill neon-font"
+                            placeholder="Search title, developer, or genre">
+                    </div>
+                </div>
+
+                <div class="col-lg-7">
+                    <div class="d-flex flex-wrap gap-2 justify-content-lg-end" id="filterBar"
+                        role="group" aria-label="Filter games by status"></div>
+                </div>
+
+            </div>
+
+            <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-3" id="gameGrid" aria-live="polite">
                 <p class="game-message neon-font">Loading games…</p>
             </div>
 
-            <button type="button" class="game-nav game-nav--next" id="nextBtn" aria-label="Next game">
-                <i class="fa-solid fa-chevron-right"></i>
-            </button>
-
         </div>
 
-        <p class="text-center neon-font fs-5 mt-4 mb-0" id="gameCounter" aria-live="polite"></p>
-
     </section>
+
+    <!-- Details modal -->
+    <div class="modal fade" id="gameModal" tabindex="-1" aria-labelledby="gameModalTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content game-modal">
+                <button type="button" class="btn-close position-absolute top-0 end-0 m-3" style="z-index: 2;"
+                    data-bs-dismiss="modal" aria-label="Close"></button>
+                <div class="row g-0">
+                    <div class="col-md-5">
+                        <div class="ratio game-modal__cover" id="gameModalCover"></div>
+                    </div>
+                    <div class="col-md-7 p-4 p-md-5 d-flex flex-column justify-content-center">
+                        <span class="game-status neon-font align-self-start mb-3" id="gameModalStatus"></span>
+                        <h2 class="fw-bold grotesque-font mb-1" id="gameModalTitle"></h2>
+                        <p class="game-developer neon-font fs-5 mb-4" id="gameModalDeveloper"></p>
+                        <dl class="neon-font mb-3">
+                            <dt>Genre</dt>
+                            <dd id="gameModalGenre"></dd>
+                            <dt>Released</dt>
+                            <dd id="gameModalReleased"></dd>
+                        </dl>
+                        <div class="d-flex flex-wrap gap-2" id="gameModalPlatforms"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-primary-subtle py-3">
+        <div class="container text-center">
+            © 2026 Raniel Angelo Castillo.
+            All Rights Reserved.
+        </div>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <script src="games.js"></script>

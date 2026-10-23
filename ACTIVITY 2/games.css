@@ -36,90 +36,157 @@ section[id] {
     font-family: "Bricolage Grotesque", sans-serif;
 }
 
-/* ---------- Games: Carousel ---------- */
-.game-stage {
-    position: relative;
-    height: 36rem;
-    overflow: hidden;
-    touch-action: pan-y;
+/* ---------- Hero Section ---------- */
+.hero-copy {
+    max-width: 560px;
+    line-height: 1.8;
+    color: #10213d;
+    font-size: 1.03rem;
 }
 
-.game-track {
-    position: relative;
-    height: 100%;
+.games-hero {
+    padding-bottom: 4rem;
 }
 
-.game-card {
-    --offset: 0;
-    --step: 19rem;
-    --scale: 0.85;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 17rem;
+.stat-box {
+    flex: 1;
     padding: 1rem;
-    border: 2px solid transparent;
     border-radius: 1.25rem;
     background: #f8fbff;
     text-align: center;
-    opacity: 0.55;
-    cursor: pointer;
-    transform: translate(-50%, -50%) translateX(calc(var(--offset) * var(--step))) scale(var(--scale));
-    transition: transform 0.4s ease, opacity 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
 }
 
-.game-card.is-active {
-    --scale: 1;
-    z-index: 2;
-    border-color: #0f172a;
-    box-shadow: 0 1.5rem 3rem rgba(15, 23, 42, 0.25);
-    opacity: 1;
-    cursor: default;
+.stat-box__num {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.1;
 }
 
-.game-card.is-hidden {
-    opacity: 0;
-    pointer-events: none;
+.stat-box__label {
+    font-size: 0.85rem;
+    color: #1b365f;
 }
 
-.game-card:focus-visible {
+/* ---------- Games: Controls ---------- */
+.game-search .input-group-text,
+.game-search .form-control {
+    background: #9ACCFC;
+    color: #0f172a;
+}
+
+.game-search .form-control::placeholder {
+    color: #1b365f;
+}
+
+.game-search .form-control:focus {
+    box-shadow: none;
+}
+
+.game-search:focus-within {
     outline: 3px solid #0f172a;
-    outline-offset: 4px;
+    outline-offset: 2px;
+    border-radius: 50rem;
 }
 
-.game-cover {
-    border-radius: 1rem;
-    overflow: hidden;
+.filter-btn {
+    padding: 0.5rem 1.4rem;
+    border: 2px solid #0f172a;
+    border-radius: 50rem;
+    background: transparent;
+    color: #0f172a;
+    font-weight: 600;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.filter-btn:hover {
     background: #9ACCFC;
 }
 
-.game-cover img {
+.filter-btn.is-active {
+    background: #0f172a;
+    color: #f8fbff;
+}
+
+.filter-btn:focus-visible {
+    outline: 3px solid #1b365f;
+    outline-offset: 3px;
+}
+
+/* ---------- Games: Poster Cards ---------- */
+.game-tile {
+    all: unset;
+    box-sizing: border-box;
+    display: block;
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+    border-radius: 1.25rem;
+    background: #9ACCFC;
+    cursor: pointer;
+}
+
+.game-tile:focus-visible {
+    outline: 3px solid #0f172a;
+    outline-offset: 3px;
+}
+
+.game-tile img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform 0.4s ease;
 }
 
-.game-cover__empty {
+.game-tile:hover img {
+    transform: scale(1.05);
+}
+
+.game-tile__empty {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: #1b365f;
-    font-size: 3rem;
+    font-size: 3.5rem;
 }
 
-.game-developer {
-    color: #1b365f;
+.game-tile__info {
+    position: absolute;
+    inset: auto 0 0 0;
+    padding: 3rem 1rem 1rem;
+    background: linear-gradient(to top, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0));
+    color: #f8fbff;
 }
 
-.game-meta {
-    font-size: 0.95rem;
-    color: #10213d;
+.game-tile__title {
+    display: block;
+    font-size: 1.15rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.game-tile__sub {
+    display: block;
+    font-size: 0.9rem;
+    opacity: 0.85;
+}
+
+.game-tile .game-status {
+    position: absolute;
+    top: 0.75rem;
+    left: 0.75rem;
 }
 
 .game-status {
     display: inline-block;
-    padding: 0.4rem 1.2rem;
+    padding: 0.3rem 0.9rem;
     border-radius: 50rem;
     background: #0f172a;
     color: #f8fbff;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
 }
 
 .game-status--playing {
@@ -127,80 +194,50 @@ section[id] {
 }
 
 .game-status--backlog {
-    background: #9ACCFC;
+    background: #f8fbff;
     color: #0f172a;
 }
 
-/* ---------- Games: Controls ---------- */
-.game-nav {
-    position: absolute;
-    top: 50%;
-    z-index: 3;
-    width: 3rem;
-    height: 3rem;
-    border: 0;
-    border-radius: 50%;
-    background: #0f172a;
-    color: #f8fbff;
-    transform: translateY(-50%);
-    transition: opacity 0.2s ease, background-color 0.2s ease;
-}
-
-.game-nav:hover:not(:disabled) {
-    background: #1b365f;
-}
-
-.game-nav:disabled {
-    opacity: 0.3;
-    cursor: not-allowed;
-}
-
-.game-nav:focus-visible {
-    outline: 3px solid #f8fbff;
-    outline-offset: 3px;
-}
-
-.game-nav--prev {
-    left: 1rem;
-}
-
-.game-nav--next {
-    right: 1rem;
-}
-
 .game-message {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    max-width: 90%;
-    margin: 0;
-    text-align: center;
-    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 560px;
+    line-height: 1.8;
+    color: #10213d;
 }
 
-/* ---------- Responsive Styles ---------- */
-@media (max-width: 575.98px) {
-    .game-stage {
-        height: 34rem;
-    }
+/* ---------- Games: Details Modal ---------- */
+.game-modal {
+    overflow: hidden;
+    border: 0;
+    border-radius: 1.25rem;
+    background: #f8fbff;
+}
 
-    .game-card {
-        --step: 15.5rem;
-        width: 15rem;
-    }
+.game-modal__cover {
+    --bs-aspect-ratio: 100%;
+    height: 100%;
+    min-height: 16rem;
+    background: #9ACCFC;
+}
 
-    .game-nav {
-        width: 2.5rem;
-        height: 2.5rem;
-    }
+.game-modal__cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
-    .game-nav--prev {
-        left: 0.5rem;
-    }
+.game-modal dt {
+    font-size: 0.85rem;
+    color: #1b365f;
+}
 
-    .game-nav--next {
-        right: 0.5rem;
-    }
+.game-modal dd {
+    margin-bottom: 0.75rem;
+    font-size: 1.1rem;
+}
+
+.game-developer {
+    color: #1b365f;
 }
 
 /* ---------- Accessibility ---------- */
@@ -209,8 +246,8 @@ section[id] {
         scroll-behavior: auto;
     }
 
-    .game-card,
-    .game-nav {
+    .game-tile img,
+    .filter-btn {
         transition: none;
     }
 }

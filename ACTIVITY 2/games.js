@@ -2,16 +2,18 @@
     "use strict";
 
     var JSON_URL = "games.json";
+    var ALL = "All";
 
-    var track = document.getElementById("gameTrack");
-    var stage = document.getElementById("gameStage");
-    var prevBtn = document.getElementById("prevBtn");
-    var nextBtn = document.getElementById("nextBtn");
-    var counter = document.getElementById("gameCounter");
+    var grid = document.getElementById("gameGrid");
+    var filterBar = document.getElementById("filterBar");
+    var statsBox = document.getElementById("gameStats");
+    var searchInput = document.getElementById("gameSearch");
+    var modalEl = document.getElementById("gameModal");
 
     var games = [];
-    var cards = [];
-    var current = 0;
+    var statuses = [];
+    var activeStatus = ALL;
+    var query = "";
 
     function el(tag, className, text) {
         var node = document.createElement(tag);
@@ -20,108 +22,137 @@
         return node;
     }
 
-    function renderCover(game) {
-        var cover = el("div", "ratio ratio-1x1 game-cover mb-3");
+    function statusClass(status) {
+        return "game-status--" + String(status || "").toLowerCase();
+    }
 
+    function fillImage(box, game, emptyClass) {
         function placeholder() {
-            cover.innerHTML = "";
-            var ph = el("div", "d-flex align-items-center justify-content-center game-cover__empty");
+            box.innerHTML = "";
+            var ph = el("div", emptyClass);
             ph.appendChild(el("i", "fa-solid fa-gamepad"));
-            cover.appendChild(ph);
+            box.appendChild(ph);
         }
-
-        if (!game.image) {
-            placeholder();
-            return cover;
-        }
-
+        if (!game.image) { placeholder(); return; }
         var img = el("img");
         img.src = game.image;
         img.alt = game.title + " cover";
         img.loading = "lazy";
         img.addEventListener("error", placeholder);
-        cover.appendChild(img);
-        return cover;
+        box.appendChild(img);
     }
 
-    function renderCard(game, index) {
-        var card = el("article", "game-card");
-        card.tabIndex = 0;
-        card.setAttribute("role", "group");
-        card.setAttribute("aria-roledescription", "slide");
-        card.setAttribute("aria-label", game.title);
+    function renderTile(game) {
+        var col = el("div", "col");
+        var tile = el("button", "game-tile");
+        tile.type = "button";
+        tile.setAttribute("aria-label", "View details for " + game.title);
 
-        card.appendChild(renderCover(game));
-        card.appendChild(el("h2", "h4 fw-bold grotesque-font mb-1", game.title));
-        card.appendChild(el("p", "game-developer neon-font fw-semibold mb-3", game.developer));
+        fillImage(tile, game, "game-tile__empty");
 
-        card.appendChild(el("p", "game-meta neon-font mb-1", "Genre: " + game.genre));
-        card.appendChild(el("p", "game-meta neon-font mb-1", "Platforms: " + (game.platforms || []).join(", ")));
-        card.appendChild(el("p", "game-meta neon-font mb-3", "Released: " + game.released));
+        tile.appendChild(el("span", "game-status neon-font " + statusClass(game.status), game.status));
 
-        var status = (game.status || "").toLowerCase();
-        var pill = el("span", "game-status neon-font game-status--" + status, game.status);
-        card.appendChild(pill);
+        var info = el("span", "game-tile__info");
+        info.appendChild(el("span", "game-tile__title grotesque-font", game.title));
+        info.appendChild(el("span", "game-tile__sub neon-font", game.genre));
+        tile.appendChild(info);
 
-        card.addEventListener("click", function () { goTo(index); });
-        card.addEventListener("keydown", function (e) {
-            if (e.key === "Enter" || e.key === " ") {
-                e.preventDefault();
-                goTo(index);
-            }
+        tile.addEventListener("click", function () { openModal(game); });
+        col.appendChild(tile);
+        return col;
+    }
+
+    function matches(game) {
+        if (activeStatus !== ALL && game.status !== activeStatus) return false;
+        if (!query) return true;
+        var haystack = [game.title, game.developer, game.genre].join(" ").toLowerCase();
+        return haystack.indexOf(query) !== -1;
+    }
+
+    function renderGrid() {
+        grid.innerHTML = "";
+        var shown = games.filter(matches);
+        if (!shown.length) {
+            var msg = el("p", "game-message neon-font", "No games match your search.");
+            msg.setAttribute("role", "status");
+            grid.appendChild(msg);
+            return;
+        }
+        shown.forEach(function (g) { grid.appendChild(renderTile(g)); });
+    }
+
+    function renderFilters() {
+        filterBar.innerHTML = "";
+        [ALL].concat(statuses).forEach(function (status) {
+            var btn = el("button", "filter-btn neon-font", status);
+            btn.type = "button";
+            btn.dataset.status = status;
+            btn.setAttribute("aria-pressed", String(status === activeStatus));
+            if (status === activeStatus) btn.classList.add("is-active");
+            btn.addEventListener("click", function () {
+                activeStatus = status;
+                Array.prototype.forEach.call(filterBar.children, function (b) {
+                    var on = b.dataset.status === activeStatus;
+                    b.classList.toggle("is-active", on);
+                    b.setAttribute("aria-pressed", String(on));
+                });
+                renderGrid();
+            });
+            filterBar.appendChild(btn);
         });
-        return card;
     }
 
-    function update() {
-        cards.forEach(function (card, i) {
-            var offset = i - current;
-            card.style.setProperty("--offset", offset);
-            card.classList.toggle("is-active", offset === 0);
-            card.classList.toggle("is-hidden", Math.abs(offset) > 2);
-            card.setAttribute("aria-hidden", offset === 0 ? "false" : "true");
-            card.tabIndex = offset === 0 ? 0 : -1;
+    function renderStats() {
+        statsBox.innerHTML = "";
+        var items = [{ label: "Total", count: games.length }];
+        statuses.forEach(function (s) {
+            items.push({
+                label: s,
+                count: games.filter(function (g) { return g.status === s; }).length
+            });
         });
-        prevBtn.disabled = current === 0;
-        nextBtn.disabled = current === games.length - 1;
-        counter.textContent = (current + 1) + " / " + games.length;
+        items.forEach(function (item) {
+            var box = el("div", "stat-box");
+            box.appendChild(el("span", "stat-box__num grotesque-font", String(item.count)));
+            box.appendChild(el("span", "stat-box__label neon-font", item.label));
+            statsBox.appendChild(box);
+        });
     }
 
-    function goTo(index) {
-        current = Math.max(0, Math.min(games.length - 1, index));
-        update();
+    function openModal(game) {
+        var cover = document.getElementById("gameModalCover");
+        cover.innerHTML = "";
+        fillImage(cover, game, "d-flex align-items-center justify-content-center game-tile__empty");
+
+        document.getElementById("gameModalTitle").textContent = game.title;
+        document.getElementById("gameModalDeveloper").textContent = game.developer;
+        document.getElementById("gameModalGenre").textContent = game.genre;
+        document.getElementById("gameModalReleased").textContent = game.released;
+
+        var status = document.getElementById("gameModalStatus");
+        status.textContent = game.status;
+        status.className = "game-status neon-font align-self-start mb-3 " + statusClass(game.status);
+
+        var platforms = document.getElementById("gameModalPlatforms");
+        platforms.innerHTML = "";
+        (game.platforms || []).forEach(function (p) {
+            platforms.appendChild(el("span", "badge rounded-pill text-bg-dark neon-font", p));
+        });
+
+        bootstrap.Modal.getOrCreateInstance(modalEl).show();
     }
 
     function showMessage(text) {
-        track.innerHTML = "";
+        grid.innerHTML = "";
         var msg = el("p", "game-message neon-font", text);
         msg.setAttribute("role", "status");
-        track.appendChild(msg);
-        prevBtn.disabled = true;
-        nextBtn.disabled = true;
-        counter.textContent = "";
+        grid.appendChild(msg);
     }
 
-    function setupControls() {
-        prevBtn.addEventListener("click", function () { goTo(current - 1); });
-        nextBtn.addEventListener("click", function () { goTo(current + 1); });
-
-        document.addEventListener("keydown", function (e) {
-            if (e.key === "ArrowLeft") goTo(current - 1);
-            if (e.key === "ArrowRight") goTo(current + 1);
-        });
-
-        // Swipe support
-        var startX = null;
-        stage.addEventListener("pointerdown", function (e) { startX = e.clientX; });
-        stage.addEventListener("pointerup", function (e) {
-            if (startX === null) return;
-            var diff = e.clientX - startX;
-            startX = null;
-            if (Math.abs(diff) > 50) goTo(current + (diff < 0 ? 1 : -1));
-        });
-        stage.addEventListener("pointercancel", function () { startX = null; });
-    }
+    searchInput.addEventListener("input", function () {
+        query = searchInput.value.trim().toLowerCase();
+        renderGrid();
+    });
 
     fetch(JSON_URL)
         .then(function (res) {
@@ -137,14 +168,12 @@
                 showMessage("No games added yet. Add entries to games.json.");
                 return;
             }
-            track.innerHTML = "";
-            games.forEach(function (game, i) {
-                var card = renderCard(game, i);
-                cards.push(card);
-                track.appendChild(card);
+            games.forEach(function (g) {
+                if (statuses.indexOf(g.status) === -1) statuses.push(g.status);
             });
-            setupControls();
-            update();
+            renderStats();
+            renderFilters();
+            renderGrid();
         })
         .catch(function (err) {
             console.error("Could not load games:", err);
