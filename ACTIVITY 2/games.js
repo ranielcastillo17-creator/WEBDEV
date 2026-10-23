@@ -48,7 +48,7 @@ function buildFilters() {
 function cardHTML(g) {
     const [c1, c2] = g.colors || ["#9ACCFC", "#1b365f"];
     const cover = g.image
-        ? `<img src="${esc(g.image)}" alt="${esc(g.title)} cover" loading="lazy">`
+        ? `<img src="${esc(g.image)}" alt="${esc(g.title)} cover" loading="lazy" decoding="async">`
         : `<h3 class="game-title">${esc(g.title)}</h3><span class="game-genre">${esc(g.genre)}</span>`;
     const links = g.links.map(l =>
         `<li><a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.label)}</a></li>`

@@ -5,7 +5,7 @@
         "genre": "Metroidvania",
         "platform": "PC, Switch, PS4, Xbox",
         "year": 2017,
-        "image": "images/hollow-knight.png",
+        "image": "images/optimized/hollow-knight.jpg",
         "colors": [
             "#9ACCFC",
             "#1b365f"
@@ -27,7 +27,7 @@
         "genre": "Metroidvania",
         "platform": "PC, Switch",
         "year": 2025,
-        "image": "images/hollow-knightss.jpg",
+        "image": "images/optimized/hollow-knightss.jpg",
         "colors": [
             "#0f172a",
             "#1b365f"
@@ -49,7 +49,7 @@
         "genre": "Platformer",
         "platform": "PC, Switch, PS4, Xbox",
         "year": 2018,
-        "image": "images/celeste.jfif",
+        "image": "images/optimized/celeste.jpg",
         "colors": [
             "#9ACCFC",
             "#6fa8dc"
@@ -71,7 +71,7 @@
         "genre": "Roguelike",
         "platform": "PC, Switch, PS5, Xbox",
         "year": 2020,
-        "image": "images/hades.jfif",
+        "image": "images/optimized/hades.jpg",
         "colors": [
             "#1b365f",
             "#9ACCFC"
@@ -93,7 +93,7 @@
         "genre": "Simulation",
         "platform": "PC, Switch, Mobile",
         "year": 2016,
-        "image": "images/stardewvalley.jfif",
+        "image": "images/optimized/stardewvalley.jpg",
         "colors": [
             "#0f172a",
             "#6fa8dc"
@@ -115,7 +115,7 @@
         "genre": "Sandbox",
         "platform": "PC, Console, Mobile",
         "year": 2011,
-        "image": "images/minecraft.jfif",
+        "image": "images/optimized/minecraft.jpg",
         "colors": [
             "#6fa8dc",
             "#0f172a"
@@ -137,7 +137,7 @@
         "genre": "Sandbox",
         "platform": "PC, Console, Mobile",
         "year": 2011,
-        "image": "images/terraria.jpg",
+        "image": "images/optimized/terraria.jpg",
         "colors": [
             "#6fa8dc",
             "#1b365f"
@@ -159,7 +159,7 @@
         "genre": "Sandbox",
         "platform": "PC, Mobile, Console",
         "year": 2006,
-        "image": "images/roblox.jpg",
+        "image": "images/optimized/roblox.jpg",
         "colors": [
             "#1b365f",
             "#0f172a"
@@ -181,7 +181,7 @@
         "genre": "Action RPG",
         "platform": "PC, PS4, PS5, Xbox",
         "year": 2022,
-        "image": "images/elden-ring.jpg",
+        "image": "images/optimized/elden-ring.jpg",
         "colors": [
             "#9ACCFC",
             "#1b365f"
@@ -203,7 +203,7 @@
         "genre": "Action RPG",
         "platform": "PC, PS3, Xbox 360, Switch",
         "year": 2011,
-        "image": "images/dark-souls.jfif",
+        "image": "images/optimized/dark-souls.jpg",
         "colors": [
             "#0f172a",
             "#1b365f"
@@ -221,7 +221,7 @@
         "genre": "Action RPG",
         "platform": "PC, PS4, Xbox One, Switch",
         "year": 2015,
-        "image": "images/witcher-3.jpg",
+        "image": "images/optimized/witcher-3.jpg",
         "colors": [
             "#9ACCFC",
             "#6fa8dc"
@@ -243,7 +243,7 @@
         "genre": "Action RPG",
         "platform": "PC, Mobile, PS4, PS5",
         "year": 2020,
-        "image": "images/genshin.jpg",
+        "image": "images/optimized/genshin.jpg",
         "colors": [
             "#1b365f",
             "#9ACCFC"
@@ -265,7 +265,7 @@
         "genre": "JRPG",
         "platform": "PS3, PS4, Switch, PC",
         "year": 2016,
-        "image": "images/persona5.jfif",
+        "image": "images/optimized/persona5.jpg",
         "colors": [
             "#0f172a",
             "#6fa8dc"
@@ -283,7 +283,7 @@
         "genre": "RPG",
         "platform": "PC, Switch, PS4",
         "year": 2015,
-        "image": "images/undertale.jpg",
+        "image": "images/optimized/undertale.jpg",
         "colors": [
             "#6fa8dc",
             "#0f172a"
@@ -305,7 +305,7 @@
         "genre": "Platformer",
         "platform": "PC, Switch, Xbox, PS4",
         "year": 2017,
-        "image": "images/cuphead.jpg",
+        "image": "images/optimized/cuphead.jpg",
         "colors": [
             "#6fa8dc",
             "#1b365f"
@@ -327,7 +327,7 @@
         "genre": "Platformer",
         "platform": "Switch",
         "year": 2017,
-        "image": "images/supermarioodyssey.jpg",
+        "image": "images/optimized/supermarioodyssey.jpg",
         "colors": [
             "#1b365f",
             "#0f172a"
@@ -345,7 +345,7 @@
         "genre": "Racing",
         "platform": "Switch",
         "year": 2017,
-        "image": "images/mariokart8deluxe.jpg",
+        "image": "images/optimized/mariokart8deluxe.jpg",
         "colors": [
             "#9ACCFC",
             "#1b365f"
@@ -363,7 +363,7 @@
         "genre": "Adventure",
         "platform": "Switch, Wii U",
         "year": 2017,
-        "image": "images/zelda-bofw.jpg",
+        "image": "images/optimized/zelda-bofw.jpg",
         "colors": [
             "#0f172a",
             "#1b365f"
@@ -385,7 +385,7 @@
         "genre": "Simulation",
         "platform": "Switch",
         "year": 2020,
-        "image": "images/animalcrossing-newhorizons.jpg",
+        "image": "images/optimized/animalcrossing-newhorizons.jpg",
         "colors": [
             "#9ACCFC",
             "#6fa8dc"
@@ -407,7 +407,7 @@
         "genre": "Puzzle",
         "platform": "PC, PS3, Xbox 360",
         "year": 2011,
-        "image": "images/postal2.jpg",
+        "image": "images/optimized/postal2.jpg",
         "colors": [
             "#1b365f",
             "#9ACCFC"
@@ -429,7 +429,7 @@
         "genre": "Adventure",
         "platform": "PC, PS4, PS5, Xbox",
         "year": 2022,
-        "image": "images/stray.jfif",
+        "image": "images/optimized/stray.jpg",
         "colors": [
             "#0f172a",
             "#6fa8dc"
@@ -447,7 +447,7 @@
         "genre": "Action-Adventure",
         "platform": "PS4, PC",
         "year": 2018,
-        "image": "images/godofwar.jpg",
+        "image": "images/optimized/godofwar.jpg",
         "colors": [
             "#6fa8dc",
             "#0f172a"
@@ -465,7 +465,7 @@
         "genre": "Action-Adventure",
         "platform": "PC, PS4, Xbox One",
         "year": 2018,
-        "image": "images/rdd2.jfif",
+        "image": "images/optimized/rdd2.jpg",
         "colors": [
             "#6fa8dc",
             "#1b365f"
@@ -487,7 +487,7 @@
         "genre": "Action-Adventure",
         "platform": "PC, PS4, PS5, Xbox",
         "year": 2013,
-        "image": "images/gtav.jpg",
+        "image": "images/optimized/gtav.jpg",
         "colors": [
             "#1b365f",
             "#0f172a"
@@ -509,7 +509,7 @@
         "genre": "FPS",
         "platform": "PC, PS5, Xbox",
         "year": 2020,
-        "image": "images/valorant.jpg",
+        "image": "images/optimized/valorant.jpg",
         "colors": [
             "#9ACCFC",
             "#1b365f"
@@ -531,7 +531,7 @@
         "genre": "FPS",
         "platform": "PC",
         "year": 2023,
-        "image": "images/cs2.jpg",
+        "image": "images/optimized/cs2.jpg",
         "colors": [
             "#0f172a",
             "#1b365f"
@@ -553,7 +553,7 @@
         "genre": "Battle Royale",
         "platform": "PC, PS4, PS5, Xbox, Switch",
         "year": 2019,
-        "image": "images/apex%20legends.jpg",
+        "image": "images/optimized/apex legends.jpg",
         "colors": [
             "#9ACCFC",
             "#6fa8dc"
@@ -575,7 +575,7 @@
         "genre": "Battle Royale",
         "platform": "PC, Console, Mobile",
         "year": 2017,
-        "image": "images/fortnite.jfif",
+        "image": "images/optimized/fortnite.jpg",
         "colors": [
             "#1b365f",
             "#9ACCFC"
@@ -597,7 +597,7 @@
         "genre": "FPS",
         "platform": "PC, PS5, Xbox, Switch",
         "year": 2022,
-        "image": "images/overwatch2.jpg",
+        "image": "images/optimized/overwatch2.jpg",
         "colors": [
             "#0f172a",
             "#6fa8dc"
@@ -619,7 +619,7 @@
         "genre": "MOBA",
         "platform": "PC",
         "year": 2009,
-        "image": "images/lol.jpg",
+        "image": "images/optimized/lol.jpg",
         "colors": [
             "#6fa8dc",
             "#0f172a"
@@ -641,7 +641,7 @@
         "genre": "MOBA",
         "platform": "PC",
         "year": 2013,
-        "image": "images/dota2.jpg",
+        "image": "images/optimized/dota2.jpg",
         "colors": [
             "#6fa8dc",
             "#1b365f"
@@ -663,7 +663,7 @@
         "genre": "MOBA",
         "platform": "Mobile",
         "year": 2016,
-        "image": "images/mlbb.jpg",
+        "image": "images/optimized/mlbb.jpg",
         "colors": [
             "#1b365f",
             "#0f172a"
@@ -685,7 +685,7 @@
         "genre": "Sports",
         "platform": "PC, PS4, PS5, Xbox, Switch",
         "year": 2015,
-        "image": "images/rocket-league.jpg",
+        "image": "images/optimized/rocket-league.jpg",
         "colors": [
             "#9ACCFC",
             "#1b365f"
@@ -707,7 +707,7 @@
         "genre": "Party",
         "platform": "PC, Mobile, Console",
         "year": 2018,
-        "image": "images/among-us.jpg",
+        "image": "images/optimized/among-us.jpg",
         "colors": [
             "#0f172a",
             "#1b365f"
