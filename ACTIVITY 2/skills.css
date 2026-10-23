@@ -88,7 +88,36 @@ html {
     border-radius: 1.25rem;
     background: #9ACCFC;
 }
+.filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
 
+.filter-btn {
+    padding: 0.5rem 1.4rem;
+    border: 2px solid #0f172a;
+    border-radius: 50rem;
+    background: transparent;
+    color: #0f172a;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.filter-btn:hover {
+    background: #9ACCFC;
+}
+
+.filter-btn.is-active {
+    background: #0f172a;
+    color: #f8fbff;
+}
+
+.filter-btn:focus-visible {
+    outline: 3px solid #1b365f;
+    outline-offset: 3px;
+}
 .skills-message {
     max-width: 560px;
     line-height: 1.8;
@@ -99,5 +128,8 @@ html {
 @media (prefers-reduced-motion: reduce) {
     html {
         scroll-behavior: auto;
+    }
+    .filter-btn {
+        transition: none;
     }
 }
