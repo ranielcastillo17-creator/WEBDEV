@@ -38,7 +38,9 @@
     }
 
     function renderGroup(category) {
-        var group = el("div", "col-12 mb-5");
+        var col = el("div", "col-12 mb-4");
+        var group = el("div", "skill-group");
+
         group.appendChild(el("h3", "h4 fw-bold mb-4 grotesque-font", category));
 
         var list = el("div", "d-flex flex-wrap gap-4");
@@ -47,7 +49,8 @@
             .forEach(function (s) { list.appendChild(renderSkill(s)); });
 
         group.appendChild(list);
-        return group;
+        col.appendChild(group);
+        return col;
     }
 
     function renderSkills() {
