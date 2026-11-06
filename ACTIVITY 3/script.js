@@ -1,10 +1,9 @@
 'use strict';
 
-/* ---------- Config ---------- */
 const API = 'https://pokeapi.co/api/v2';
 const SPRITES = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork';
 const PAGE_SIZE = 24;
-const MAX_ID = 1025; // national dex through Gen IX
+const MAX_ID = 1025; 
 const HIDDEN_TYPES = ['unknown', 'shadow', 'stellar'];
 
 const GENERATIONS = [
@@ -24,13 +23,11 @@ const SORTERS = {
   'name-desc': (a, b) => b.name.localeCompare(a.name)
 };
 
-/* ---------- State and cache ---------- */
 const state = { all: [], filtered: [], shown: 0, token: 0, currentId: null, shiny: false };
 const cache = {
   pokemon: new Map(), species: new Map(), evo: new Map(), type: new Map(), gen: new Map()
 };
 
-/* ---------- DOM ---------- */
 const $ = id => document.getElementById(id);
 const els = {
   grid: $('pokeGrid'), search: $('search'), type: $('typeFilter'), gen: $('genFilter'),
@@ -41,7 +38,6 @@ const els = {
 };
 const modal = new bootstrap.Modal(els.modalEl);
 
-/* ---------- Helpers ---------- */
 const idFromUrl = url => Number(url.match(/\/(\d+)\/?$/)[1]);
 const pad = n => String(n).padStart(3, '0');
 const formatName = n => n.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
@@ -52,8 +48,6 @@ async function getJSON(url) {
   if (!res.ok) throw new Error(`Request failed (${res.status})`);
   return res.json();
 }
-
-// Cache promises so the same request is never sent twice.
 function cached(map, key, loader) {
   if (!map.has(key)) {
     const promise = loader().catch(err => { map.delete(key); throw err; });
@@ -74,7 +68,6 @@ const getGenIds = n => cached(cache.gen, n, async () => {
   return new Set(data.pokemon_species.map(s => idFromUrl(s.url)));
 });
 
-/* ---------- UI helpers ---------- */
 const setLoading = on => els.loading.classList.toggle('d-none', !on);
 function showError(err) {
   setLoading(false);
@@ -125,7 +118,7 @@ function failedCardHTML(p) {
     </div>`;
 }
 
-/* ---------- Filters and list ---------- */
+
 function buildGenerationOptions() {
   els.gen.insertAdjacentHTML('beforeend',
     GENERATIONS.map((label, i) => `<option value="${i + 1}">${label}</option>`).join(''));
@@ -162,7 +155,7 @@ async function applyFilters() {
     return;
   }
 
-  if (token !== state.token) return; // a newer filter change took over
+  if (token !== state.token) return;
 
   state.filtered = [...list].sort(SORTERS[els.sort.value]);
   state.shown = 0;
@@ -191,7 +184,7 @@ async function renderMore(token = state.token) {
   updateCount();
 }
 
-/* ---------- Detail modal ---------- */
+
 function flattenEvolution(chain) {
   const stages = [];
   let level = [chain];
@@ -299,9 +292,8 @@ async function playCry() {
     const audio = new Audio(url);
     audio.volume = 0.4;
     await audio.play();
-  } catch (_) { /* audio is optional, ignore failures */ }
+  } catch (_) {  }
 }
-
 function toggleShiny() {
   state.shiny = !state.shiny;
   const img = $('detailImg');
@@ -310,7 +302,7 @@ function toggleShiny() {
   if (btn) btn.innerHTML = `<i class="fa-solid fa-star me-1"></i>${state.shiny ? 'Normal' : 'Shiny'}`;
 }
 
-/* ---------- Events ---------- */
+
 function debounce(fn, ms) {
   let t;
   return (...args) => { clearTimeout(t); t = setTimeout(() => fn(...args), ms); };
@@ -357,7 +349,6 @@ els.modalBody.addEventListener('keydown', e => {
   if (target) { e.preventDefault(); openDetail(Number(target.dataset.id)); }
 });
 
-/* ---------- Init ---------- */
 async function init() {
   hideError();
   setLoading(true);
