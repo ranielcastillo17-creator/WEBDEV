@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400&family=Tilt+Neon:wght@400&family=Tilt+Warp:wght@400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <title>Pokédex</title>
+</head>
+<body>
+
+
+    <section class="bg-primary-subtle pb-5">
+
+        <nav class="navbar navbar-expand-lg py-4">
+            <div class="container">
+
+                <a class="navbar-brand fw-bold fs-1 logo-font" href="https://ranielcastillo17-creator.github.io">
+                    raniel<span class="text-light">.</span>
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav" aria-controls="navbarNav"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto gap-lg-5">
+                        <li class="nav-item">
+                            <a class="nav-link fw-semibold neon-font" href="https://ranielcastillo17-creator.github.io">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-semibold neon-font" href="https://ranielcastillo17-creator.github.io/#about">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-semibold neon-font" href="https://ranielcastillo17-creator.github.io/WEBDEV/skills/skills.html">Skills</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-semibold neon-font" href="https://ranielcastillo17-creator.github.io/WEBDEV/projects/projects.html">Projects</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-semibold neon-font" href="https://ranielcastillo17-creator.github.io/#contact">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </nav>
+
+        <div class="container">
+            <div class="row align-items-center">
+
+                <div class="col-lg-7">
+                    <span class="badge rounded-pill text-bg-dark neon-font mb-3">Activity 3</span>
+
+                    <h1 class="display-3 fw-bold grotesque-font mb-3">
+                        <span class="text-light">My</span>
+                        Pokédex
+                    </h1>
+                </div>
+
+                <div class="col-lg-5 text-center d-none d-lg-block">
+                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png"
+                        class="img-fluid hero-img"
+                        alt="Pikachu artwork">
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+    <main class="py-5">
+        <div class="container">
+            <section class="card border-0 shadow-sm mb-4" aria-label="Search and filters">
+                <div class="card-body">
+                    <div class="row g-2 align-items-end">
+                        <div class="col-12 col-lg-4">
+                            <label for="search" class="form-label small fw-semibold neon-font mb-1">Search</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-white"><i class="fa-solid fa-magnifying-glass"></i></span>
+                                <input id="search" type="search" class="form-control" placeholder="Name or #ID (e.g. pikachu or 25)" autocomplete="off">
+                            </div>
+                        </div>
+                        <div class="col-6 col-lg-2">
+                            <label for="typeFilter" class="form-label small fw-semibold neon-font mb-1">Type</label>
+                            <select id="typeFilter" class="form-select"><option value="">All types</option></select>
+                        </div>
+                        <div class="col-6 col-lg-2">
+                            <label for="genFilter" class="form-label small fw-semibold neon-font mb-1">Generation</label>
+                            <select id="genFilter" class="form-select"><option value="">All generations</option></select>
+                        </div>
+                        <div class="col-6 col-lg-2">
+                            <label for="sortBy" class="form-label small fw-semibold neon-font mb-1">Sort</label>
+                            <select id="sortBy" class="form-select">
+                                <option value="id-asc">Number (low to high)</option>
+                                <option value="id-desc">Number (high to low)</option>
+                                <option value="name-asc">Name (A to Z)</option>
+                                <option value="name-desc">Name (Z to A)</option>
+                            </select>
+                        </div>
+                        <div class="col-6 col-lg-2 d-flex gap-2">
+                            <button id="randomBtn" type="button" class="btn btn-ink flex-fill"><i class="fa-solid fa-shuffle me-1"></i>Random</button>
+                            <button id="resetBtn" type="button" class="btn btn-outline-dark" title="Reset filters" aria-label="Reset filters"><i class="fa-solid fa-rotate-left"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <p id="countText" class="small text-secondary neon-font mb-3" aria-live="polite"></p>
+
+            <div id="errorBox" class="alert alert-danger d-none d-flex justify-content-between align-items-center" role="alert">
+                <span id="errorText">Something went wrong.</span>
+                <button id="retryBtn" type="button" class="btn btn-sm btn-outline-danger">Retry</button>
+            </div>
+            <div id="pokeGrid" class="row row-cols-2 row-cols-md-3 row-cols-xl-4 g-3"></div>
+
+            <div id="emptyState" class="text-center text-secondary py-5 d-none">
+                <i class="fa-regular fa-face-frown fs-1 d-block mb-2"></i>
+                <span class="neon-font">No Pokémon found. Try a different search or filter.</span>
+            </div>
+
+            <div id="loading" class="text-center py-4 d-none">
+                <div class="spinner-border text-dark" role="status"><span class="visually-hidden">Loading...</span></div>
+            </div>
+
+            <div class="text-center mt-4">
+                <button id="loadMoreBtn" type="button" class="btn btn-ink px-4 d-none">Load more</button>
+            </div>
+
+        </div>
+    </main>
+    <div class="modal fade" id="detailModal" tabindex="-1" aria-labelledby="detailTitle" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title fs-4 fw-bold grotesque-font" id="detailTitle">Pokémon</h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body neon-font" id="detailBody"></div>
+                <div class="modal-footer justify-content-between">
+                    <button id="prevBtn" type="button" class="btn btn-outline-dark btn-sm"><i class="fa-solid fa-chevron-left me-1"></i>Prev</button>
+                    <button id="nextBtn" type="button" class="btn btn-outline-dark btn-sm">Next<i class="fa-solid fa-chevron-right ms-1"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer class="bg-primary-subtle py-3">
+        <div class="container text-center">
+            © 2026 Raniel Angelo Castillo.
+            All Rights Reserved.
+            <div class="small">Data from <a href="https://pokeapi.co" target="_blank" rel="noopener" class="text-dark">PokéAPI</a></div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
