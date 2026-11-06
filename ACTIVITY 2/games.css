@@ -1,8 +1,7 @@
-/* Game list page. Loaded after ../ACTIVITY 1/style.css (shared colors, fonts, navbar). */
+
 
 .games-hero { padding-bottom: 3rem; }
 
-/* ---------- Filters & search ---------- */
 .filter-bar .btn-filter {
     border: 2px solid #0f172a;
     color: #0f172a;
@@ -30,7 +29,7 @@
     box-shadow: 0 0 0 .25rem rgba(27, 54, 95, .2);
 }
 
-/* ---------- Grid & cards ---------- */
+
 .game-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
@@ -93,7 +92,6 @@
     color: #0f172a;
 }
 
-/* ---------- Hover overlay ---------- */
 .game-overlay {
     position: absolute;
     inset: 0;

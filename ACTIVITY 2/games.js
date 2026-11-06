@@ -6,7 +6,6 @@ const emptyState = document.getElementById("emptyState");
 let games = [];
 let activeGenre = "All";
 
-// Load the JSON data (needs GitHub Pages or a local server, not file://)
 fetch("games.json")
     .then(res => {
         if (!res.ok) throw new Error("HTTP " + res.status);
